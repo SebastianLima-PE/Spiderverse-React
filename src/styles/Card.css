@@ -1,0 +1,146 @@
+/* ======================================================
+   CAROUSEL DE PERSONAJES
+====================================================== */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 48px;
+  padding: 20px 80px;
+  max-width: 100%;
+}
+
+.characters-carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  overflow: visible;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.carousel-card-wrapper {
+  flex: 0 0 auto;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Flechas de navegación */
+.carousel-arrow {
+  background: rgba(230, 36, 41, 0.8);
+  border: 2px solid var(--color-primary);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.carousel-arrow:hover {
+  background: var(--color-primary);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(230, 36, 41, 0.6);
+}
+
+.carousel-arrow:active {
+  transform: scale(0.95);
+}
+
+/* Indicadores (dots) */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(230, 36, 41, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot:hover {
+  border-color: var(--color-primary);
+  transform: scale(1.2);
+}
+
+.carousel-dot.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px rgba(230, 36, 41, 0.8);
+  transform: scale(1.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .characters-carousel {
+    gap: 20px;
+  }
+  
+  .carousel-container {
+    padding: 20px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 20px 10px;
+  }
+  
+  .characters-carousel {
+    gap: 15px;
+  }
+  
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  /* Mostrar solo 1 card en móvil */
+  .carousel-card-wrapper:nth-child(n+2) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+  
+  .carousel-dots {
+    gap: 8px;
+  }
+  
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
