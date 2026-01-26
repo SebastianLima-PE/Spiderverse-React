@@ -19,7 +19,7 @@ const MultiverseSection = () => {
       {/* Video de fondo */}
       <video autoPlay muted loop playsInline className="multiverse-video" preload="auto">
         <source
-  src={`${import.meta.env.BASE_URL}videos/spider-web.mp4`}
+  src={`${import.meta.env.BASE_URL}videos/spiderweb.mp4`}
   type="video/mp4"
 />
 
