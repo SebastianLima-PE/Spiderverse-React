@@ -18,7 +18,11 @@ const MultiverseSection = () => {
     <section className="multiverse-container" id="multiverse">
       {/* Video de fondo */}
       <video autoPlay muted loop playsInline className="multiverse-video" preload="auto">
-        <source src="/videos/spider-web.mp4" type="video/mp4" />
+        <source
+  src={`${import.meta.env.BASE_URL}videos/spider-web.mp4`}
+  type="video/mp4"
+/>
+
         Tu navegador no soporta videos.
       </video>
 

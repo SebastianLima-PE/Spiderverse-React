@@ -6,10 +6,11 @@ const Hero = () => {
     <header className="hero">
       {/* Video Background */}
       <video className="hero__video" autoPlay muted loop playsInline preload="metadata">
-        <source 
-          src="/videos/adobe-express-ytdowncom-youtube-inicio-spider-man-nuevo_zkmZfU2m (online-video-cutter.com).mp4" 
-          type="video/mp4" 
-        />
+<source
+  src={`${import.meta.env.BASE_URL}videos/intro.mp4`}
+  type="video/mp4"
+/>
+
         Tu navegador no soporta video HTML5.
       </video>
 
